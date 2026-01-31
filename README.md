@@ -1,11 +1,16 @@
 <div align="center">
 
-# 🌸 Saki V1.0
-### The Intelligent Skill Forge (Agent-on-Agent)
+# 🌸 Saki | 咲
 
-> **"Don't build a new agent. Upgrade the one you have."**
+**The Intelligent Skill Forge for AI Agents**
 
-[中文介绍](README_CN.md)
+[English](README.md) | [简体中文](README_zh.md)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Saki Version](https://img.shields.io/badge/Version-1.1.0-magenta.svg)]()
+[![Agent Compatible](https://img.shields.io/badge/Agent-Ready-green.svg)]()
+
+> **"With Saki, Skills are Easy."**
 
 </div>
 
@@ -22,88 +27,53 @@
 Writing a `SKILL.md` manually is tedious. Copying one from the internet requires too much modification to fit your project.
 
 ## 🌸 The Cure: Saki
+
 **Delegate the bureaucracy to Saki.**
 
 Saki is a **Meta-Agent** (Saki CLI + Saki Skill).
 It sits inside your project, reads your **Tasks**, scans your **Repo**, respects your **Preferences**, and **forges** the perfect Skill for you.
+
 It doesn't guess; it **Scans**, **Retrieves**, and **Synthesizes**.
 
-### 🚀 Key Capabilities (V2.2)
-
-1.  **Context Awareness** 🕵️
-    *   Reads `package.json`, `Cargo.toml`, `go.mod`.
-    *   Reads your `README.md` to understand the project soul.
-    *   *Result*: Sees "Rust + Axum" -> Generates Async Rust skills.
-
-2.  **Intelligent Bootstrap** ⚡
-    *   **Command**: `@Saki bootstrap`
-    *   **Magic**: Instantly generates 5-10 essential skills tailored to your stack.
-    *   *Example*: A Next.js project gets: `next-router`, `tailwind-patterns`, `react-hooks`, `typescript-strict`.
-
-3.  **The Awesome Library** 📚
-    *   Built-in indexed corpus of **3,500+** best practices (from the *awesome-agent-skills* project).
-    *   Saki retrieves the specific "Gold Standard" for your query (e.g., "FastAPI Testing") and injects it into your agent.
+**Saki turns "Generic AI" into "Senior Engineer AI".**
 
 ---
 
-## 🏛️ Architecture & Design
+## 🚀 Quick Start (30 Seconds)
 
-Saki operates on a "Cognitive Loop" rather than simple string replacement.
+### Step 1: The Ritual (Install)
+Inject the Saki Meta-Skill into your agent.
+
+```bash
+# Windows / Mac / Linux
+python saki.py init
+```
+*(Saki automatically detects your OS language setting!)*
+
+### Step 2: The Awakening (Forge)
+Open your AI Assistant and type:
+
+> **@Saki bootstrap**
+
+### Step 3: The Magic
+Saki will:
+1.  🕵️ **Scan** your repo (detects Rust vs Node, Tailwind vs CSS, etc.).
+2.  🧠 **Synthesize** a `SKILL.md` perfectly matched to your reality.
+3.  ✨ **Result**: Your AI now knows *exactly* how to work in this codebase.
+
+---
+
+## 📂 Architecture
 
 ```mermaid
-graph TD
-    subgraph Input [Phase 1: Awareness]
-        P[Project Files] -->|Context Scanner| Context[Stack: Rust/React...]
-        U[User Profile] -->|Persona| Role[Role: Hacker/Architect]
-    end
-
-    subgraph Memory [Phase 2: Retrieval]
-        idx[Library Index] -->|Search Engine| Ref[Reference Wisdom]
-        Ref -->|Example| Ex["Use tokio::select!"]
-    end
-
-    subgraph Core [Phase 3: The Forge]
-        Context & Role & Ref --> Agent[Saki Intelligence]
-        Agent -->|Synthesis| Skill[Bespoke SKILL.md]
-    end
-
-    User -->|@Saki bootstrap| Core
-    Skill -->|Install| IDE[.agent/skills]
+graph LR
+    CLI[Terminal: saki init] -->|Installs| Agent[Agent: SKILL.md]
+    Agent -->|Calls| Scanner[Scanner Script]
+    Scanner -->|Context JSON| Agent
+    Agent -->|Synthesizes| Skills[Bespoke Skills]
+    style CLI fill:#f9f,stroke:#333,stroke-width:2px
+    style Agent fill:#bbf,stroke:#333,stroke-width:4px
+    style Scanner fill:#bfb,stroke:#333,stroke-width:2px
 ```
 
-### Components
-1.  **Saki.py**: The delivery vehicle. Injects the Meta-Skill into your IDE.
-2.  **Logic Layer (`SKILL.md`)**: The brain. Defines the protocols for "Bootstrap" and "Singleforge".
-3.  **Sensors (`scripts/`)**:
-    *   `context_scanner.py`: Analyzes the file system.
-    *   `search_index.py`: Vector-like retrieval from the knowledge base.
-
----
-
-## 📦 Usage
-
-### ⚡ Quick Start
-
-1.  **Install**:
-    ```bash
-    python saki.py
-    ```
-2.  **Bootstrap**:
-    Open your Agent (e.g., Cursor) and type:
-    > **@Saki bootstrap**
-
-    *Saki will scan your project and instantly generate 5-10 tailored skills.*
-
-### 📖 Detailed Documentation
-For advanced usage, configuration (like `USER_PROFILE.md`), and custom template creation, please read the **[User Guide](docs/USER_GUIDE.md)**.
-
----
-
-## 🍵 Philosophy
-We believe **Context is King**.
-A generic "Expert Python Skill" is useless.
-A "Python Skill for *this* Django 4.2 Legacy Project using Celery" is priceless.
-
-**Saki makes the latter.**
-
-Enjoy.
+*Forged with 🌸 by Antigravity*
