@@ -1,16 +1,60 @@
-# Data
-raw_data/
-*.log
-__pycache__/
+# --- Saki Project Artifacts ---
+# User specific configuration (Don't commit my persona if customized)
+skills/saki/USER_PROFILE.md
 
-# IDE
-.vscode/
-.idea/
+# Generated Knowledge & Indexes
+skills/saki/knowledge/library_index.json
+skills/saki/knowledge/*.tmp
 
-# System
-Thumbs.db
-.DS_Store
-
-# User-specific
-user_context/
+# Generated Skills (Test output)
+.agent/
 generated_skills/
+test_output/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+.env
+
+# --- IDEs & Agents ---
+# We generally ignore Agent configs unless they are shared project rules
+# But Saki aims to generate these, so we might not want to commit our own local test ones.
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- OS Generated ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- Logs ---
+*.log
