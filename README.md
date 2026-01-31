@@ -1,12 +1,11 @@
-# ⚒️ Agent Skill Forge
+# Meta Skill Forge
 
 <div align="center">
 
-![Agent Skill Forge](https://img.shields.io/badge/Status-Beta-blue?style=for-the-badge)
-![Agent-Native](https://img.shields.io/badge/Agent--Native-100%25-ff69b4?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Meta Skill Forge](https://img.shields.io/badge/Meta%20Skill-Forge-blueviolet?style=for-the-badge)
+![Philosophy](https://img.shields.io/badge/Philosophy-Skills%20to%20make%20Skills-white?style=for-the-badge)
 
-> **"Don't just use skills. Forge them."**
+> **"Skills to make Skills."**
 
 [**🇨🇳 中文文档 (Chinese)**](./README_CN.md) | [**Contributing**](./CONTRIBUTING.md)
 
@@ -14,64 +13,63 @@
 
 ---
 
-**Agent Skill Forge** is not a script. It is a **Meta-Skill** that teaches your AI (Claude, Cursor, Antigravity) how to build *new* skills for you.
+## 🧬 What is this?
 
-We crawled **600+ high-quality Agent Skills** to distill the "DNA" of a perfect tool. We packaged this intelligence into a `SKILL.md` that acts as a "Skill Architect" inside your IDE.
+**Meta Skill Forge** is a recursive intelligence engine.
+It is an AI Agent Skill designed to... create *other* AI Agent Skills.
 
-## 🚀 Key Features
+It was born from the analysis of **644 Patterns** found in the [awesome-agent-skills](https://github.com/jd-soloki/awesome-agent-skills) repository. We distilled the "DNA" of what makes a skill great—structured prompts, clear triggers, and safe actions—and packaged it into a **Meta-Skill**.
 
-*   **🧠 Deep Intelligence**: It knows the patterns of 600+ production skills.
-*   **🎭 Persona-Aware**: Reads your `user_profile.md` to know if you are a **Learner**, **Hacker**, or **Enterprise Architect**.
-*   **⚡ Native Integration**: No Python scripts to run. Just chat with your Agent.
+## 🧠 The Philosophy (Design Thinking)
 
-## ⚡ Quick Start
+Most users don't know how to prompt their Agent effectively.
+*   **Old Way**: You manually write a prompt to tell the agent what to do.
+*   **The Forge Way**: You tell the **Meta-Skill** about your role ("I am a Hacker") and your stack ("Next.js"). It then **Forges** a specialized `SKILL.md` that perfectly directs the agent for that specific context.
+
+**It bridges the gap between "Generic AI" and "Specialized Expert".**
+
+## 🔄 Usage Flow
 
 ### 1. Installation
-Copy the `skills/skill-forge` directory into your agent's skill folder:
+Copy the core intelligence into your agent's skill directory. The Forge supports:
+
+| Platform | Path |
+| :--- | :--- |
+| **Antigravity** | `.agent/skills/` |
+| **Cursor** | `.cursor/skills/` |
+| **Claude Code** | `.claude/skills/` |
+| **Windsurf** | `.windsurf/skills/` |
 
 ```bash
-# Example for Cursor/Antigravity
+# Example for Cursor
 cp -r skills/skill-forge .cursor/skills/
 ```
 
-### 2. Usage (The Magic)
-Open your IDE and just ask:
+### 2. The Personalization (One-Time)
+Tell the Forge who you are. Copy a template from `skills/skill-forge/profiles/`:
+*   `learner.md`: For deep understanding.
+*   `hacker.md`: For rapid prototyping.
 
-> **User**: "@skill-forge Analyze this project and recommend some skills."
+### 3. The Fabrication (Daily Usage)
+Just chat with your Agent:
 
-> **User**: "@skill-forge I am building a Next.js app. Create a routing expert skill for me."
+> **User**: "@meta-skill-forge Inspect this Python backend. I need a skill to handle database migrations safely."
 
-### 3. Personalization (Optional)
-Want the agent to write code *your* way?
-Copy one of our templates from `skills/skill-forge/profiles/` to `.agent/user_profile.md`.
+**The Forge**:
+1.  **Analyzes** the project (finds `alembic`, `sqlalchemy`).
+2.  **Selects** the `ops.md` template (for safety).
+3.  **Injects** your `learner.md` persona (explains the migration steps).
+4.  **Generates** `.agent/skills/db-migrator.md`.
 
-*   `learner.md`: "Explain everything."
-*   `hacker.md`: "Speed first. MVP focus."
-*   `enterprise.md`: "Strict types and documentation."
+Now, your Agent has a permanent new capability!
 
 ## 📂 Project Structure
 
-*   `skills/skill-forge/SKILL.md`: **The Brain**. The Meta-Prompt that powers the engine.
-*   `skills/skill-forge/templates/`: **The Specialist Tools**.
-    *   `coding.md`: For writing code (React, Go, Python).
-    *   `ops.md`: For DevOps safe execution (Docker, K8s).
-    *   `architecture.md`: For System Design & ADRs.
-    *   `testing.md`: For QA & Coverage.
-    *   `dependency.md`: For Package Management.
-    *   `security.md`: For Audits & Auth.
-    *   `writing.md`: For Tech Docs & Changelogs.
-    *   `data.md`: For Analysis & ETL.
-    *   `product.md`: For UX & User Stories.
-*   `skills/skill-forge/profiles/`: Persona templates.
-*   `raw_data/`: The original corpus (local cache).
-
-## 🤝 Contributing
-
-We believe in **Meta-Skills**—tools that build tools.
-PRs are welcome! Help us improve the prompt engineering or add new skill sources.
+*   `skills/skill-forge/`: **The Core**.
+    *   `SKILL.md`: The Brain.
+    *   `templates/`: The Specialists (Coding, Ops, Architecture, etc.).
+    *   `profiles/`: The Personas.
+*   `library/`: The **Source of Truth**. containing the categorized corpus of 600+ skills we learned from.
 
 ---
-
-<div align="center">
-Made with ❤️ by the Open Source Community
-</div>
+*Learned from the community, built for the future.*

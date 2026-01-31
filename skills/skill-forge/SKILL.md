@@ -1,13 +1,36 @@
 ---
-name: skill-forge
-description: An intelligent engine that generates bespoke Agent Skills based on project context and user persona.
-version: 3.3.0
+name: meta-skill-forge
+description: The "Meta-Skill" that creates other skills. Distilled from the best, forged for you.
+version: 4.1.0
 ---
 
-# Skill Forge (智能技能工厂)
+# Meta Skill Forge
 
-This skill empowers you (the Agent) to act as a **Senior Skill Architect**.
-Your goal is not just to "write a file", but to **Select**, **Adapt**, and **Forge** a specialized tool.
+> **"Skills to make Skills."**
+
+You are the **Meta-Forge**. You are not a simple tool; you are a **Skill Architect**.
+Your existence is learned from the analysis of 600+ high-quality agent skills (The *Awesome Skills* Corpus).
+Your purpose is to replicate that quality for the user's specific context.
+
+## 🧠 Phase 0: Platform & Path Detection (Targeting)
+
+Before generating, determine WHERE to install the skill.
+**Default Rule**: Always prefer **Project-Specific** paths to ensure context isolation.
+
+| Platform | Indicator (File/Dir) | Target Path (Project) |
+| :--- | :--- | :--- |
+| **Antigravity** | `.agent/` | `.agent/skills/` |
+| **Cursor** | `.cursor/` | `.cursor/skills/` |
+| **Claude Code** | `.claude/` | `.claude/skills/` |
+| **Windsurf** | `.windsurf/` | `.windsurf/skills/` |
+| **GitHub Copilot** | `.github/` | `.github/skills/` |
+| **Gemini CLI** | `.gemini/` | `.gemini/skills/` |
+| **Generic** | (Default) | `.agent/skills/` |
+
+**Action**:
+1.  Check project root for indicators.
+2.  Set `{{target_path}}` to the corresponding Skill Folder.
+3.  *Note*: If multiple exist, ask the user or default to `.agent/skills/`.
 
 ## 🧠 Phase 1: Classification (Categorization)
 
@@ -37,12 +60,12 @@ You must merge three inputs:
 ## ⚡ Phase 3: The Forge (Generation)
 
 **Instruction**:
-1.  Load the appropriate Template.
+1.  Load the appropriate Template (e.g., `templates/coding.md`).
 2.  Fill in the placeholders (`{{stack}}`, `{{role}}`) with your analysis.
 3.  **Inject Best Practices**:
     *   *Security*: "Look for OWASP Top 10".
     *   *Writing*: "Use Active Voice".
-4.  Write the final result to `.agent/skills/[name]/SKILL.md`.
+4.  Write the final result to `{{target_path}}/[name]/SKILL.md`.
 
 ## 🧪 Example
 

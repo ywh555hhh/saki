@@ -1,11 +1,11 @@
-# ⚒️ Agent Skill Forge (智能技能工厂)
+# Meta Skill Forge (元技能工厂)
 
 <div align="center">
 
-![Agent Skill Forge](https://img.shields.io/badge/Status-Beta-blue?style=for-the-badge)
-![Agent-Native](https://img.shields.io/badge/Agent--Native-100%25-ff69b4?style=for-the-badge)
+![Meta Skill Forge](https://img.shields.io/badge/Meta%20Skill-Forge-blueviolet?style=for-the-badge)
+![Philosophy](https://img.shields.io/badge/Philosophy-Skills%20to%20make%20Skills-white?style=for-the-badge)
 
-> **"不要只是使用 Skill，去铸造它们。"**
+> **"Skills to make Skills. (用技能去铸造技能)"**
 
 [**English Document**](./README.md)
 
@@ -13,65 +13,63 @@
 
 ---
 
-**Agent Skill Forge** 不是一个 Python 脚本，而是一个 **Meta-Skill (元技能)**。
-它教会你的 AI (Claude, Cursor, Antigravity) 如何为你“铸造”出全新的、完美的工具。
+## 🧬 这是什么？
 
-我们深度分析了 **600+ 个顶级 Agent Skills**，提炼出优秀工具的“DNA”，并将其封装进一个 `SKILL.md`。从此，你的 IDE 里面就住着一位“技能架构师”。
+**Meta Skill Forge** 是一个递归式的智能引擎。
+它是一个用来“创造其他技能”的 AI Agent 技能。
 
-## 🚀 核心亮点
+它的诞生源于对 [awesome-agent-skills](https://github.com/jd-soloki/awesome-agent-skills) 仓库中 **644 种优秀模式** 的深度分析。我们提炼了顶级 Skill 的“基因”——结构化的提示词、清晰的触发器、安全的操作边界——并将这份智慧封装成了一个 **Meta-Skill (元技能)**。
 
-*   **🧠 原生智能**: 内置 600+ 生产级 Skill 的设计模式。
-*   **🎭 千人千面**: 能够读取 `user_profile.md`，识别你是 **Learner (学习者)**、**Hacker (极客)** 还是 **Architect (架构师)**。
-*   **⚡ 无缝集成**: 无需运行外部脚本，直接在聊天窗口与 Agent 交互。
+## 🧠 设计哲学 (Design Thinking)
 
-## ⚡ 快速开始
+大多数用户并不知道如何编写高质量的 Agent 指令。
+*   **过去**: 你手写一堆提示词，告诉 AI 要做什么。
+*   **Forge**: 你只需要告诉 Meta-Skill 你的角色（"我是个极客"）和你的技术栈（"Next.js"）。它就会为你 **铸造 (Forge)** 一个完美适配当前上下文的专用 `SKILL.md`。
+
+**它连接了“通用 AI”与“垂直领域专家”之间的鸿沟。**
+
+## 🔄 使用流程
 
 ### 1. 安装 (Installation)
-将 `skills/skill-forge` 文件夹复制到你的 Agent 技能目录：
+将核心智能植入你的 Agent 技能目录。Forge 支持多种平台：
+
+| 平台 (Platform) | 路径 (Path) |
+| :--- | :--- |
+| **Antigravity** | `.agent/skills/` |
+| **Cursor** | `.cursor/skills/` |
+| **Claude Code** | `.claude/skills/` |
+| **Windsurf** | `.windsurf/skills/` |
 
 ```bash
-# Cursor / Antigravity 示例
+# Cursor 示例
 cp -r skills/skill-forge .cursor/skills/
 ```
 
-### 2. 使用 (Usage)
-在 IDE 中直接呼唤它：
+### 2. 个性化 (The Personalization)
+告诉 Forge 你是谁。从 `skills/skill-forge/profiles/` 复制一个画像模板：
+*   `learner.md`: 适合学习者，强调原理解释。
+*   `hacker.md`: 适合极客，强调速度与 MVP。
 
-> **User**: "@skill-forge 帮我分析这个项目，推荐我应该配置什么 Skill。"
+### 3. 铸造 (The Fabrication)
+在日常开发中，直接与 Agent 对话：
 
-> **User**: "@skill-forge 我正在写一个 Next.js 后台，帮我生成一个处理 API 路由的 Skill。"
+> **User**: "@meta-skill-forge 分析一下这个 Python 后端。我需要一个能安全处理数据库迁移的技能。"
 
-### 3. 个性化 (Personalization)
-希望 Agent 懂你的代码风格？
-从 `skills/skill-forge/profiles/` 复制一个模板到 `.agent/user_profile.md`。
+**Forge 的思考过程**:
+1.  **分析 (Analysis)**: 扫描项目，发现使用了 `alembic` 和 `sqlalchemy`。
+2.  **选择 (Selection)**: 调取 `ops.md` 模板（因为涉及运维安全）。
+3.  **注入 (Fusion)**: 注入你的 `learner.md` 画像（因此生成的技能会详细解释每一步）。
+4.  **生成 (Generation)**: 产出 `.agent/skills/db-migrator.md`。
 
-*   `learner.md`: "我是来学习的，请详细解释每一行代码。"
-*   `hacker.md`: "别废话，我要速度。MVP 优先。"
-*   `enterprise.md`: "严格模式。必须有类型检查和文档注释。"
+从此，你的 Agent 就从“通用助手”进化成了“数据库迁移专家”！
 
 ## 📂 项目结构
 
-*   `skills/skill-forge/SKILL.md`: **大脑 (The Brain)**. 驱动引擎的元提示词。
-*   `skills/skill-forge/templates/`: **专家工具箱**.
-    *   `coding.md`: 代码专家 (Coding).
-    *   `ops.md`: 运维专家 (DevOps).
-    *   `architecture.md`: 架构师 (System Design).
-    *   `testing.md`: 测试专家 (QA).
-    *   `dependency.md`: 依赖管理 (Packages).
-    *   `security.md`: 安全专家 (Security).
-    *   `writing.md`: 技术写作 (Documentation).
-    *   `data.md`: 数据科学家 (Analysis).
-    *   `product.md`: 产品经理 (Product/UX).
-*   `skills/skill-forge/profiles/`: 用户画像模板。
-*   `raw_data/`: 原始数据集（本地缓存）。
-
-## 🤝 参与贡献
-
-我们相信 **Meta-Skills**（构建工具的工具）是未来的方向。
-欢迎提交 PR！帮助我们优化 Prompt Engineering，或添加更多优质的 Skill 源。
+*   `skills/skill-forge/`: **核心引擎 (The Core)**.
+    *   `SKILL.md`: 大脑 (Brain).
+    *   `templates/`: 专家模具 (Coding, Ops, Architecture 等).
+    *   `profiles/`: 用户画像 (Personas).
+*   `library/`: **智慧源泉 (Source of Truth)**. 包含我们学习过的 600+ 个已分类的技能库。
 
 ---
-
-<div align="center">
-Made with ❤️ by the Open Source Community
-</div>
+*Learned from the community, built for the future.*
