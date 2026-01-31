@@ -54,15 +54,29 @@ def bootstrap(target_dir):
         print(f"❌ Error: context_scanner.py not found at {context_scanner_path}")
         return
 
-    # 1. Run Context Scanner (Simulated call for now, or import)
-    # In a real scenario, we might import context_scanner
-    # from context_scanner import scan
-    # But to keep dependencies loose, let's assume valid tags for now or use sys.args
-    
-    # For robust bootstrapping, we scan the CWD (User's project)
-    # Here we default to a standard set for demonstration if scan fails
-    detected_tags = ["git"] 
-    # TODO: Connect real scanner here.
+    # 1. Run Context Scanner
+    # Add current dir to sys.path to import sibling script
+    sys.path.append(str(SCRIPT_DIR))
+    try:
+        import context_scanner
+        scan_result = context_scanner.scan_context(str(Path(target_dir).resolve()))
+        print(f"DEBUG: Scan Result: {scan_result}") # Visual feedback
+        
+        # Merge stacks and frameworks into tags
+        detected_tags = scan_result.get("tech_stack", []) + scan_result.get("frameworks", [])
+        
+        # Add package manager as a tag if known
+        pm = scan_result.get("package_manager", "unknown")
+        if pm != "unknown":
+            detected_tags.append(pm)
+            
+        # Fallback if empty
+        if not detected_tags:
+            detected_tags = ["git"]
+            
+    except Exception as e:
+        print(f"⚠️ Scanner failed: {e}")
+        detected_tags = ["git"]
     
     print(f"🔍 Detected Context: {detected_tags}")
     

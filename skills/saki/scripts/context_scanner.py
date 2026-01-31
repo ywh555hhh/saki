@@ -127,8 +127,8 @@ def scan_context(root_dir="."):
     context["tech_stack"] = list(set(context["tech_stack"]))
     context["frameworks"] = list(set(context["frameworks"]))
     
-    # Output as JSON for Saki
-    print(json.dumps(context, indent=2))
+    return context
 
 if __name__ == "__main__":
-    scan_context(os.getcwd())
+    result = scan_context(os.getcwd())
+    print(json.dumps(result, indent=2))
