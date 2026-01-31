@@ -10,6 +10,8 @@ skills/saki/knowledge/*.tmp
 .agent/
 generated_skills/
 test_output/
+tests/mock_project/
+test_result.log
 
 # --- Python ---
 __pycache__/
