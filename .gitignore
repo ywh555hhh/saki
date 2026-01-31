@@ -1,0 +1,16 @@
+# Data
+raw_data/
+*.log
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+
+# System
+Thumbs.db
+.DS_Store
+
+# User-specific
+user_context/
+generated_skills/
