@@ -24,8 +24,11 @@ Before generating ANY skill, ask: **"Is this a Task or a Behavior?"**
 
 **Execution Loop**:
 1.  **Deep Scan**:
-    *   Command: `python .agent/skills/saki/scripts/context_scanner.py` (Or `.cursor/skills/saki/...` depending on install)
-    *   Command: `read_file .agent/skills/saki/USER_PROFILE.md`
+    *   **Protocol: Path Discovery**:
+        *   Determine where Saki is installed (e.g., `.agent/skills/saki`, `.cursor/skills/saki`, or `.windsurf/skills/saki`).
+        *   Set `$SAKI_HOME` to that path.
+    *   Command: `python $SAKI_HOME/scripts/context_scanner.py`
+    *   Command: `read_file $SAKI_HOME/USER_PROFILE.md`
     *   *Reason*: Understand the stack (e.g., "Rust+Tauri") and the User (e.g., "Hacker").
 2.  **Strategize**:
     *   Based on the scan, list 5-10 **Critical Skills** this project needs.

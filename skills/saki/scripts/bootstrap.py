@@ -103,5 +103,8 @@ def bootstrap(target_dir):
         print(f"✨ Bootstrapped {len(generated_skills)} skills: {', '.join(generated_skills)}")
 
 if __name__ == "__main__":
-    target = sys.argv[1] if len(sys.argv) > 1 else ".agent/skills"
+    # Default to installing skills in the parent directory of 'saki'
+    # e.g. if saki is in .cursor/skills/saki, install to .cursor/skills
+    default_target = SAKI_ROOT.parent
+    target = sys.argv[1] if len(sys.argv) > 1 else str(default_target)
     bootstrap(target)
