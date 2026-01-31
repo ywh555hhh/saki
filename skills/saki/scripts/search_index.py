@@ -3,7 +3,8 @@ import json
 import sys
 import os
 
-INDEX_FILE = r"d:\codeToGit\saki\skills\saki\knowledge\library_index.json"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+INDEX_FILE = os.path.join(SCRIPT_DIR, "..", "knowledge", "library_index.json")
 
 def search(query):
     if not os.path.exists(INDEX_FILE):
