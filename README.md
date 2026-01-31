@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌸 Saki V2.2
+# 🌸 Saki V1.0
 ### The Intelligent Skill Forge (Agent-on-Agent)
 
 > **"Don't build a new agent. Upgrade the one you have."**
@@ -11,16 +11,21 @@
 
 ---
 
-## 😫 The Pain: Context Explosion
-You want your AI Agent (Cursor, Antigravity, Claude) to follow your project's specific conventions.
-*   "Use `bun` not `npm`."
-*   "We use `zod` for validation."
-*   "Our `Django` structure is non-standard."
+## 😫 The Pain: "I just want it to work"
 
-Manually writing prompt files (`.agent/skills/*.md`) for every new project is tedious. You end up with generic, helpful-but-dumb agents.
+**The Scenario**:
+1.  **You have tasks**: "I need to deploy this," "I need to refactor that."
+2.  **You have a repo**: It has its own history, quirks, and tech stack.
+3.  **You have preferences**: You hate manual boilerplate. You hate copying generic skills and rewriting them.
+
+**The Problem**:
+Writing a `SKILL.md` manually is tedious. Copying one from the internet requires too much modification to fit your project.
 
 ## 🌸 The Cure: Saki
-Saki is a **Meta-Agent**. It sits inside your project and **forges** skills for your Agent on demand.
+**Delegate the bureaucracy to Saki.**
+
+Saki is a **Meta-Agent** (Saki CLI + Saki Skill).
+It sits inside your project, reads your **Tasks**, scans your **Repo**, respects your **Preferences**, and **forges** the perfect Skill for you.
 It doesn't guess; it **Scans**, **Retrieves**, and **Synthesizes**.
 
 ### 🚀 Key Capabilities (V2.2)

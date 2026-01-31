@@ -1,6 +1,6 @@
 # Saki Component Documentation
 
-> **Version**: 2.2.0 (Intelligent Bootstrap Edition)
+> **Version**: 1.0.0 (Intelligent Bootstrap Edition)
 > **Last Updated**: 2026-01-31
 
 本文档详细拆解 Saki 项目的核心组件、职责边界及其实现原理。
