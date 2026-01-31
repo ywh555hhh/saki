@@ -7,13 +7,14 @@ This diagram explains how the **User Profile** and **Project Context** fuse toge
 ```mermaid
 flowchart TD
     subgraph Inputs [Context Inputs]
-        P[Project Codebase] -->|Scanner| Context[Context: Tech Stack & Arch]
+        P[Project Codebase] -->|Scanner| Context[Context: Tech Stack & README]
         U[User Profile .md] -->|Persona| Role[Role: Learner/Hacker/Architect]
-        L[Awesome Skills Library] -->|Reference| Patterns[Design Patterns]
+        L[Library Index] -->|Search| Patterns[Selected Pattern]
+        T[Templates] -->|Fallback| Base[Base Structure]
     end
 
-    subgraph Core [The Skill Forge (Meta-Skill)]
-        Context & Role & Patterns --> Engine[Agent Reasoning Engine]
+    subgraph Core [The Skill Forge 2.1]
+        Context & Role & Patterns & Base --> Engine[Agent Synthesis Engine]
         Engine -->|Decision| Strategy{Strategy Selection}
         
         Strategy -->|Deep Mode| Deep[Synthesize Philosophy & Rules]
