@@ -37,9 +37,9 @@ MANIFEST
 
 # --- Virtual Environments ---
 venv/
-.venv/
 env/
 .env
+uv.lock
 
 # --- IDEs & Agents ---
 # We generally ignore Agent configs unless they are shared project rules
